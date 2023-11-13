@@ -132,5 +132,4 @@ dmypy.json
 scripts/
 .nfs0000000124b82a82000001b0
 *output.txt
-results/
 *results.txt

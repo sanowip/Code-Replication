@@ -19,7 +19,7 @@ net = models.resnet34(pretrained=True)
 # Switch to evaluation mode
 net.eval()
 
-im_orig = Image.open('DeepFool/test_im1.jpg')
+im_orig = Image.open('Code/test_im1.jpg')
 
 mean = [ 0.485, 0.456, 0.406 ]
 std = [ 0.229, 0.224, 0.225 ]
@@ -35,7 +35,7 @@ im = transforms.Compose([
 
 r, loop_i, label_orig, label_pert, pert_image = deepfool(im, net)
 
-labels = open(os.path.join('DeepFool/synset_words.txt'), 'r').read().split('\n')
+labels = open(os.path.join('Code\synset_words.txt'), 'r').read().split('\n')
 
 str_label_orig = labels[int(label_orig)].split(',')[0]
 str_label_pert = labels[int(label_pert)].split(',')[0]
